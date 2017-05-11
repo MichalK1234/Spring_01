@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <bean id="product1" class="com.spring1.classes.Product">
+        <constructor-arg name="name" value="book"></constructor-arg>
+        <constructor-arg name="price" value="19.99"></constructor-arg>
+        <constructor-arg name="amount" value="1"></constructor-arg>
+    </bean>
+    <bean id="product2" class="com.spring1.classes.Product">
+        <constructor-arg name="name" value="apple"></constructor-arg>
+        <constructor-arg name="price" value="3.99"></constructor-arg>
+        <constructor-arg name="amount" value="6"></constructor-arg>
+    </bean>
+    <bean id="product3" class="com.spring1.classes.Product">
+        <constructor-arg name="name" value="pen"></constructor-arg>
+        <constructor-arg name="price" value="119.99"></constructor-arg>
+        <constructor-arg name="amount" value="1"></constructor-arg>
+    </bean>
+    <bean id="product4" class="com.spring1.classes.Product">
+        <constructor-arg name="name" value="water"></constructor-arg>
+        <constructor-arg name="price" value="1.99"></constructor-arg>
+        <constructor-arg name="amount" value="1"></constructor-arg>
+    </bean>
+    <bean id="product5" class="com.spring1.classes.Product">
+
+        <constructor-arg name="name" value="computer"></constructor-arg>
+        <constructor-arg name="price" value="1599.99"></constructor-arg>
+        <constructor-arg name="amount" value="1"></constructor-arg>
+    </bean>
+
+
+    <bean id="customer1" class="com.spring1.classes.Customer">
+        <constructor-arg name="name" value="Jan"></constructor-arg>
+        <constructor-arg name="surname" value="Kowalski"></constructor-arg>
+        <constructor-arg name="cash" value="120.00"></constructor-arg>
+        <constructor-arg name="basket">
+            <set>
+                <ref bean="product1"></ref>
+                <ref bean="product3"></ref>
+                <ref bean="product4"></ref>
+            </set>
+        </constructor-arg>
+    </bean>
+    <bean id="customer2" class="com.spring1.classes.Customer">
+        <constructor-arg name="name" value="Jurek"></constructor-arg>
+        <constructor-arg name="surname" value="Kiler"></constructor-arg>
+        <constructor-arg name="cash" value="200.00"></constructor-arg>
+        <constructor-arg name="basket">
+            <set>
+                <ref bean="product1"></ref>
+                <ref bean="product3"></ref>
+                <ref bean="product2"></ref>
+            </set>
+        </constructor-arg>
+    </bean>
+    <bean id="customer3" class="com.spring1.classes.Customer">
+        <constructor-arg name="name" value="Andrzej"></constructor-arg>
+        <constructor-arg name="surname" value="Szyszka"></constructor-arg>
+        <constructor-arg name="cash" value="2000.00"></constructor-arg>
+        <constructor-arg name="basket" ref="product5"></constructor-arg>
+    </bean>
+
+
+    <bean id="customersManual" class="com.spring1.classes.CustomersManual">
+
+        <constructor-arg name="customers">
+            <set>
+                <ref bean="customer1"></ref>
+                <ref bean="customer2"></ref>
+                <ref bean="customer3"></ref>
+
+            </set>
+        </constructor-arg>
+    </bean>
+
+    <bean id="transaction1" class="com.spring1.classes.TransactionAdvanced"></bean>
+    <bean id="transaction2" class="com.spring1.classes.TransactionOrdinary"></bean>
+
+</beans>
