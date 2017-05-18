@@ -14,6 +14,10 @@ public class App {
     public static void main(String[] args) {
 
 
+        //PROGRAM WYKONANY W RAMACH SZKOLENIA KM-PROGRAMS
+        //http://km-programs.pl/
+
+
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
 
 
